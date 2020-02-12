@@ -123,20 +123,40 @@ const merchCards = (divId, arr) => {
     // if statement so this function only runs on the merch page
     if (window.location.pathname=='/merch.html') {
     for (let i = 0; i <arr.length; i++) {
-        domString += '<div>';
+        domString += '<div class="col-md-4 col-lg-4 my-3">';
         domString += '  <div class="card">';
-        domString += `      <h3 class="card-title">${arr[i].title}</h3>`;
+        domString += `      <h3 class="card-title p-2 text-center">${arr[i].title}</h3>`;
         domString += '      <div class="card-body">';
         domString += `          <img class="card-img-top merch-img-cards" src="${arr[i].imgUrl}" alt="merch image">`;
-        domString += `          <p class="card-text">${arr[i].description}</p>`;
+        domString += `          <p class="card-text p-2">${arr[i].description}</p>`;
+        domString += '          <div class="text-center">';
         domString += '          <a href="#" class="btn btn-primary">Buy Now</a>';
+        domString += '          </div>';
         domString += '      </div>';
         domString += '  </div>';
         domString += '</div>';
     };
     printToDom(divId, domString);
 }
+};
+
+const buildConcertSection = () => {
+    if (window.location.pathname=='/index.html') {
+    let domString = '';
+    domString += `<h1 class="text-center">Live Shows!</h1>`
+    domString += `<div class="d-flex flex-">`
+    domString += `<div class="concert-text col-6">`
+    domString +=    `<h4>Flogging lugger deadlights trysail cog. Pink lee brig Barbary Coast draft. Grog blossom capstan mizzenmast yard fathom. Jolly Roger marooned sutler flogging lateen sail. Lee come about hardtack dead men tell no tales Admiral of the Black. Skysail galleon Chain Shot keelhaul bounty. Aft hulk gunwalls hands fire in the hole. Blow the man down landlubber or just lubber boatswain hail-shot league. To go on account crow's nest cutlass doubloon Blimey. Privateer pinnace lateen sail Chain Shot code of conduct.</h4>`
+    domString += `</div>`
+    domString += `<div class="concert-image col-6">`
+    domString +=    `<img src="https://live.staticflickr.com/65535/48480398492_97807f80bf_c.jpg" alt="High kicks in Dusseldorf"/>`
+    domString += `</div>`
+    domString += `</div>`
+
+    printToDom('concert', domString);
 }
+};
+
 
 // list group for CONCERTS
 const listGroupBuilder = (arr) => {
@@ -166,6 +186,7 @@ const events = () => {
 const init = () => {
     listGroupBuilder(Cities);
     merchCards('merchContainer', merch);
+    buildConcertSection();
 };
 
 init();
