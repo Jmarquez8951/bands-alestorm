@@ -60,7 +60,13 @@ const buyTicketAlert = (i) => {
 };
 
 const addCity = () => {
-    console.log('in here');
+    const newCity = new Object();
+    if (document.getElementById('concert-input').value === ''){
+        window.alert('Please add a city first.');
+    } else {
+        userInput = document.getElementById('concert-input').value;
+        month = Math.ceil(Math.random() * 12)
+    }
 }
 
 const buttonMaker = () => {
