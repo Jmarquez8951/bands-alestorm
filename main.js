@@ -94,7 +94,32 @@ const addCity = () => {
         window.alert('Please add a city first.');
     } else {
         userInput = document.getElementById('concert-input').value;
-        month = Math.floor(Math.random() * 12);
+        newCity.City = userInput;
+        randomMonth = Math.floor(Math.random() * 12);
+        month = months[randomMonth];
+        switch (month) {
+            case 'January':
+            case 'March':
+            case 'May':
+            case 'July':
+            case 'August':
+            case 'October':
+            case 'December':
+                day = Math.floor(Math.random() * 31);
+                break;
+            case 'April':
+            case 'June':
+            case 'September':
+            case 'November':
+                day = Math.floor(Math.random() * 31);
+                break;
+            case 'February':
+                day = Math.floor(Math.random() * 28);
+                break;
+        }
+        newCity.Date = month + ' ' + day;
+        Cities.push(newCity);
+        listGroupBuilder(Cities);
     }
 }
 
