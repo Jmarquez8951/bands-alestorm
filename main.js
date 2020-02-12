@@ -117,31 +117,33 @@ const printToDom = (divId, textToPrint) => {
     selectedDiv.innerHTML = textToPrint;
 };
 
-// building MERCH cards
+// building MERCH cards for MERCH PAGE
 const merchCards = (divId, arr) => {
     let domString = '';
-    // if statement so this function only runs on the merch page
-    if (window.location.pathname=='/merch.html') {
     for (let i = 0; i <arr.length; i++) {
         domString += '<div class="col-md-4 col-lg-4 my-3">';
         domString += '  <div class="card">';
         domString += `      <h3 class="card-title p-2 text-center">${arr[i].title}</h3>`;
         domString += '      <div class="card-body">';
         domString += `          <img class="card-img-top merch-img-cards" src="${arr[i].imgUrl}" alt="merch image">`;
+        if (arr[i].type === 'cd') { /* write func to put tracks in domString instead of descrip */
+           domString += `<p class="card-text p-2">Track List: 1. ${arr[i].tracks[0]}, 2. ${arr[i].tracks[1]}, 3. ${arr[i].tracks[2]}, 4. ${arr[i].tracks[3]}, 5. ${arr[i].tracks[4]}, 6. ${arr[i].tracks[5]} </p>`;
+        } else {
         domString += `          <p class="card-text p-2">${arr[i].description}</p>`;
+        }
         domString += '          <div class="text-center">';
         domString += '          <a href="#" class="btn btn-primary">Buy Now</a>';
         domString += '          </div>';
         domString += '      </div>';
         domString += '  </div>';
         domString += '</div>';
+    
     };
     printToDom(divId, domString);
-}
 };
 
+// CONCERT SECT ON HOMEPAGE
 const buildConcertSection = () => {
-    if (window.location.pathname=='/index.html') {
     let domString = '';
     domString += `<h1 class="text-center">Live Shows!</h1>`
     domString += `<div class="d-flex flex-">`
@@ -154,20 +156,16 @@ const buildConcertSection = () => {
     domString += `</div>`
 
     printToDom('concert', domString);
-}
 };
 
 
 // list group for CONCERTS
 const listGroupBuilder = (arr) => {
     let domString = '';
-    // if statement so this function only runs on the concerts page
-    if (window.location.pathname=='/concerts.html') {
     for (let i = 0; i < arr.length; i++){
     domString += `<a onClick="buyTicketAlert(${i})" class="list-group-item list-group-item-action">${arr[i].City}  <p>When: ${arr[i].Date}</p></a>`;
     }
     printToDom('list-group', domString);
-}
 };
 
 // function for buying tickets
@@ -184,9 +182,13 @@ const events = () => {
 
 // INIT FUNCTION - THESE RUN ON PAGE LOAD
 const init = () => {
+    if (window.location.pathname=='/concerts.html') {
     listGroupBuilder(Cities);
+    } else if (window.location.pathname=='/merch.html') {
     merchCards('merchContainer', merch);
+    } else {
     buildConcertSection();
+    }
 };
 
 init();
