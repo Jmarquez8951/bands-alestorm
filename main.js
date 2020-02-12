@@ -41,6 +41,21 @@ const Cities = [
     }
 ];
 
+const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+];
+
 const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML = textToPrint;
@@ -73,15 +88,60 @@ const buyTicketAlert = (i) => {
     window.alert(`You just bought tickets to our show in ${Cities[i].City}. Thank you for your purchase.`)
 };
 
-const events = () => {
-    for (let i = 0; i < Cities.length; i++){
-    document.getElementById(`${i}`).addEventListener('click', buyTicketAlert)
+const addCity = () => {
+    const newCity = new Object();
+    if (document.getElementById('concert-input').value === ''){
+        window.alert('Please add a city first.');
+    } else {
+        userInput = document.getElementById('concert-input').value;
+        newCity.City = userInput;
+        randomMonth = Math.floor(Math.random() * 12);
+        month = months[randomMonth];
+        switch (month) {
+            case 'January':
+            case 'March':
+            case 'May':
+            case 'July':
+            case 'August':
+            case 'October':
+            case 'December':
+                day = Math.floor(Math.random() * 31);
+                break;
+            case 'April':
+            case 'June':
+            case 'September':
+            case 'November':
+                day = Math.floor(Math.random() * 31);
+                break;
+            case 'February':
+                day = Math.floor(Math.random() * 28);
+                break;
+        }
+        newCity.Date = month + ' ' + day;
+        Cities.push(newCity);
+        listGroupBuilder(Cities);
     }
 }
 
+const buttonMaker = () => {
+    for (let i = 0; i < Cities.length; i++){
+    document.getElementById(`${i}`).addEventListener('click', buyTicketAlert);
+    }
+};
+
+const events = () => {
+    document.getElementById('city-submit').addEventListener('click', addCity);
+}
+
 const init = () => {
-    // listGroupBuilder(Cities);
-    buildConcertSection();
+    if (window.location.pathname == '/concerts.html'){
+        listGroupBuilder(Cities);
+        events();
+    }
+
+    if (window.location.pathname == '/index.html'){
+        buildConcertSection();
+    }
 };
 
 init();
