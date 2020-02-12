@@ -59,14 +59,23 @@ const buyTicketAlert = (i) => {
     window.alert(`You just bought tickets to our show in ${Cities[i].City}. Thank you for your purchase.`)
 };
 
-const events = () => {
+const addCity = () => {
+    console.log('in here');
+}
+
+const buttonMaker = () => {
     for (let i = 0; i < Cities.length; i++){
-    document.getElementById(`${i}`).addEventListener('click', buyTicketAlert)
+    document.getElementById(`${i}`).addEventListener('click', buyTicketAlert);
     }
+};
+
+const events = () => {
+    document.getElementById('city-submit').addEventListener('click', addCity);
 }
 
 const init = () => {
     listGroupBuilder(Cities);
+    events();
 };
 
 init();
