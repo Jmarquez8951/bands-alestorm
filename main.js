@@ -46,6 +46,7 @@ const printToDom = (divId, textToPrint) => {
     selectedDiv.innerHTML = textToPrint;
 };
 
+<<<<<<< HEAD
 const buildConcertSection = () => {
     let domString = '';
     domString += `<div class="section">`
@@ -58,6 +59,8 @@ const buildConcertSection = () => {
 
     printToDom('concerts', domString);
 };
+=======
+>>>>>>> 1ed9f70c0da6b7d7a503cafeffd1a5a599525866
 
 const listGroupBuilder = (arr) => {
     domString = '';
