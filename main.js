@@ -41,14 +41,43 @@ const Cities = [
     }
 ];
 
+const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+];
+
 const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML = textToPrint;
 };
 
+const buildConcertSection = () => {
+    let domString = '';
+    domString += `<h1 class="text-center">Live Shows!</h1>`
+    domString += `<div class="d-flex flex-">`
+    domString += `<div class="concert-text col-6">`
+    domString +=    `<h4>Flogging lugger deadlights trysail cog. Pink lee brig Barbary Coast draft. Grog blossom capstan mizzenmast yard fathom. Jolly Roger marooned sutler flogging lateen sail. Lee come about hardtack dead men tell no tales Admiral of the Black. Skysail galleon Chain Shot keelhaul bounty. Aft hulk gunwalls hands fire in the hole. Blow the man down landlubber or just lubber boatswain hail-shot league. To go on account crow's nest cutlass doubloon Blimey. Privateer pinnace lateen sail Chain Shot code of conduct.</h4>`
+    domString += `</div>`
+    domString += `<div class="concert-image col-6">`
+    domString +=    `<img src="https://live.staticflickr.com/65535/48480398492_97807f80bf_c.jpg" alt="High kicks in Dusseldorf"/>`
+    domString += `</div>`
+    domString += `</div>`
+
+    printToDom('concert', domString);
+};
 
 const listGroupBuilder = (arr) => {
-    domString = '';
+    let domString = '';
     for (let i = 0; i < arr.length; i++){
     domString += `<a onClick="buyTicketAlert(${i})" class="list-group-item list-group-item-action">${arr[i].City}  <p>When: ${arr[i].Date}</p></a>`;
     }
@@ -65,7 +94,7 @@ const addCity = () => {
         window.alert('Please add a city first.');
     } else {
         userInput = document.getElementById('concert-input').value;
-        month = Math.ceil(Math.random() * 12)
+        month = Math.floor(Math.random() * 12);
     }
 }
 
@@ -80,8 +109,14 @@ const events = () => {
 }
 
 const init = () => {
-    listGroupBuilder(Cities);
-    events();
+    if (window.location.pathname == '/concerts.html'){
+        listGroupBuilder(Cities);
+        events();
+    }
+
+    if (window.location.pathname == '/index.html'){
+        buildConcertSection();
+    }
 };
 
 init();
