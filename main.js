@@ -1,7 +1,8 @@
-const merch = [
+// Merch Array for merch page
+const merch = [ 
     {
         title: 'Captain Morgan\'s Revenge',
-        imgURL: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/1/2/12555_alestorm_captain_morgan_s_revenge_cd_folk_metal_napalm_records_.jpg',
+        imgUrl: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/1/2/12555_alestorm_captain_morgan_s_revenge_cd_folk_metal_napalm_records_.jpg',
         type: 'cd',
         tracks: ['"Over the Seas"', '"Captain Morgan\'s Revenge"', '"The Huntmaster"', '"Nancy the Tavern Wench"', '"Death Before the Mast"', '"Terror on the High Seas"'],
         onSale: false,
@@ -9,7 +10,7 @@ const merch = [
     },
     {
         title: 'Black Sails at Midnight',
-        imgURL: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/1/3/13704_alestorm_black_sails_at_midnight_cd_pirate_metal_napalm_records_1.jpg',
+        imgUrl: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/1/3/13704_alestorm_black_sails_at_midnight_cd_pirate_metal_napalm_records_1.jpg',
         type: 'cd',
         tracks: ['"The Quest" (Christopher Bowes)', '"Leviathan" (Bowes)', '"That Famous Ol\' Spiced"', '"Keelhauled"', '"To the End of Our Days"', '"Black Sails at Midnight"'],
         onSale: false,
@@ -17,41 +18,41 @@ const merch = [
     },
     {
         title: 'Alestorm Kilt',
-        imgURL: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/5/9/59121-1_alestorm_green_tartan_kilt_napalm_records.jpg',
+        imgUrl: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/5/9/59121-1_alestorm_green_tartan_kilt_napalm_records.jpg',
         type: 'clothing',
         onSale: true,
         description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft.'
     },
     {
         title: 'Alestorm Hoodie',
-        imgURL: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/5/3/53746-1_alestorm_pirate_pizza_party_zip_hoodie_napalm_records.jpg',
+        imgUrl: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/5/3/53746-1_alestorm_pirate_pizza_party_zip_hoodie_napalm_records.jpg',
         type: 'clothing',
         description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft.'
     },
     {
         title: 'Alestorm T-shirt',
-        imgURL: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/5/0/50348_alestorm_25_years_napalm_records_t-shirt_napalm_records.jpg',
+        imgUrl: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/5/0/50348_alestorm_25_years_napalm_records_t-shirt_napalm_records.jpg',
         type: 'clothing',
         onSale: false,
         description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft.'
     },
     {
         title: 'Alestorm T-shirt',
-        imgURL: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/2/7/27241_alestorm_banana_duck_girlie_shirt_napalm_records.jpg',
+        imgUrl: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/2/7/27241_alestorm_banana_duck_girlie_shirt_napalm_records.jpg',
         type: 'clothing',
         onSale: false,
         description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft.'
     },
     {
         title: 'Alestorm Beanie',
-        imgURL: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/3/1/31419_alestorm_red_logo_beanie_napalm_records.jpg',
+        imgUrl: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/3/1/31419_alestorm_red_logo_beanie_napalm_records.jpg',
         type: 'clothing',
         onSale: false,
         description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft.'
     },
     {
         title: 'Curse of the Crystal Coconut',
-        imgURL: 'https://images.unsplash.com/photo-1554444510-592779e6e009?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80',
+        imgUrl: 'https://images.unsplash.com/photo-1554444510-592779e6e009?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80',
         type: 'cd',
         tracks: ['"The Coconut Calls"', '"Tales from the Coconut Crypt"', '"Old Man River (cover)"', '"Why\'s the Rum Gone?"', '"You Drive me Coco-nutty"', '"Nutella"'],
         onSale: true,
@@ -59,35 +60,112 @@ const merch = [
     },
     {
         title: 'Alestorm Tank Top',
-        imgURL: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/4/4/44537-2_alestorm_pirate_pizza_party_girlie_tank_top_napalm_records.jpg',
+        imgUrl: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/4/4/44537-2_alestorm_pirate_pizza_party_girlie_tank_top_napalm_records.jpg',
         type: 'clothing',
         onSale: true,
         description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft.'
     }
+    ];
+
+// Cities Array for Concerts Page
+const Cities = [
+    {
+       City: 'Melbourne',
+       Date: 'March 20'
+    },
+    {
+       City: 'Sydney',
+       Date: 'March 21'
+    },
+    {
+       City: 'Solvesborg',
+       Date: 'June 04'
+    },
+    {
+       City: 'Interlaken',
+       Date: 'June 12'
+    },
+    {
+       City: 'Donington',
+       Date: 'June 14'
+    },
+    {
+       City: 'Dessel',
+       Date: 'June 19'
+    },
+    {
+       City: 'Clisson',
+       Date: 'June 20'
+    },
+    {
+       City: 'Barcelona',
+       Date: 'July 03'
+    },
+    {
+       City: 'Villafranca di Verona',
+       Date: 'July 04'
+    },
+    {
+       City: 'Vizovice',
+       Date: 'July 09'
+    }
 ];
 
+// PRINT TO DOM FUCTION
 const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
-    selectedDiv.innerHTML = texttoPrint;
+    selectedDiv.innerHTML = textToPrint;
 };
 
+// building MERCH cards
 const merchCards = (divId, arr) => {
     let domString = '';
+    // if statement so this function only runs on the merch page
+    if (window.location.pathname=='/merch.html') {
     for (let i = 0; i <arr.length; i++) {
-        domString += '<div class="card">';
-        domString += '  <h5 class="card-title">Card title</h5>'
-        domString += '  <div class="card-body">';
-        domString += '      <img class="card-img-top" src="..." alt="Card image cap">';
-        domString += '      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card\'s content.</p>';
-        domString += '      <a href="#" class="btn btn-primary">Go somewhere</a>';
+        domString += '<div>';
+        domString += '  <div class="card">';
+        domString += `      <h3 class="card-title">${arr[i].title}</h3>`;
+        domString += '      <div class="card-body">';
+        domString += `          <img class="card-img-top merch-img-cards" src="${arr[i].imgUrl}" alt="merch image">`;
+        domString += `          <p class="card-text">${arr[i].description}</p>`;
+        domString += '          <a href="#" class="btn btn-primary">Buy Now</a>';
+        domString += '      </div>';
         domString += '  </div>';
         domString += '</div>';
     };
     printToDom(divId, domString);
 }
-
-const init = () => {
-    merchCards('merchContainer', merch);
 }
+
+// list group for CONCERTS
+const listGroupBuilder = (arr) => {
+    let domString = '';
+    // if statement so this function only runs on the concerts page
+    if (window.location.pathname=='/concerts.html') {
+    for (let i = 0; i < arr.length; i++){
+    domString += `<a onClick="buyTicketAlert(${i})" class="list-group-item list-group-item-action">${arr[i].City}  <p>When: ${arr[i].Date}</p></a>`;
+    }
+    printToDom('list-group', domString);
+}
+};
+
+// function for buying tickets
+const buyTicketAlert = (i) => {
+    window.alert(`You just bought tickets to our show in ${Cities[i].City}. Thank you for your purchase.`)
+};
+
+// event listener for buy tickets button / list group
+const events = () => {
+    for (let i = 0; i < Cities.length; i++){
+    document.getElementById(`${i}`).addEventListener('click', buyTicketAlert)
+    }
+}
+
+// INIT FUNCTION - THESE RUN ON PAGE LOAD
+const init = () => {
+    listGroupBuilder(Cities);
+    merchCards('merchContainer', merch);
+};
 
 init();
