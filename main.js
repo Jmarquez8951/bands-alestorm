@@ -222,13 +222,6 @@ const addCity = () => {
         Cities.push(newCity);
         listGroupBuilder(Cities);
     }
-}
-
-// MAKES THE EVENT LISTENER FOR CITIES CREATED
-const buttonMaker = () => {
-    for (let i = 0; i < Cities.length; i++){
-    document.getElementById(`${i}`).addEventListener('click', buyTicketAlert);
-    }
 };
 
 // EVENTS FUNCTION
@@ -244,12 +237,12 @@ const init = () => {
     
     if (window.location.pathname == '/concerts.html'){
         listGroupBuilder(Cities);
+        events();
     }
 
     if (window.location.pathname == '/index.html'){
         buildConcertSection();
     }
-    events();
 };
 
 init();
