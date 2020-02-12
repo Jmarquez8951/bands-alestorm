@@ -8,7 +8,7 @@
     <title>Alestorm: Concerts</title>
 </head>
 <body>
-    <h1>Alestorm: Concerts</h1>
+<!-- BEGIN NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-bar" style="background-color: #41c9c9;">
         <a class="navbar-brand" href="index.html">Alestorm</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,14 +31,26 @@
             </ul>
         </div>
         </nav>
-
+     <!-- END NAVBAR -->
+     
         <div id="list-group"></div>
+
+
+        <form>
+            <div class="col-4">
+                <p>Tell us where you want to see us play.</p>
+                <input id="concert-input" type="text" class="form-control" placeholder="Enter a city">
+                <button id="city-submit" type="button" class="btn btn-info">Submit</button>
+            </div>
+        </form>
 
         <footer class="footer">
             <div class="container">
             <h3>2020 Alestorm &copy;</h3>
-        </div>
+            </div>
         </footer>
+<!-- END FOOTER -->
+        <!-- SCRIPT TAG(S) -->
     <script src="./main.js"></script>
 </body>
 </html>
