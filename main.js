@@ -140,13 +140,13 @@ const merchCards = (divId, arr) => {
       domString += `      <h3 class="card-title p-2 text-center">${arr[i].title}</h3>`;
       domString += '      <div class="card-body">';
       domString += `          <img class="card-img-top merch-img-cards" src="${arr[i].imgUrl}" alt="merch image">`;
-       if (arr[i].type === 'cd') { /* write func to put tracks in domString instead of descrip */
+       if (arr[i].type === 'cd') {
          domString += `<p class="card-text p-2">Track List: 1. ${arr[i].tracks[0]}, 2. ${arr[i].tracks[1]}, 3. ${arr[i].tracks[2]}, 4. ${arr[i].tracks[3]}, 5. ${arr[i].tracks[4]}, 6. ${arr[i].tracks[5]} </p>`;
          } else {
          domString += `          <p class="card-text p-2">${arr[i].description}</p>`;
          }
       domString += '          <div class="text-center">';
-      domString += '          <a href="#" class="btn btn-primary">Buy Now</a>';
+      domString += `         <a onClick="buyNowAlert(${i})" class="btn btn-primary">Buy Now</a>`;
       domString += '          </div>';
       domString += '      </div>';
       domString += '  </div>';
@@ -170,6 +170,7 @@ const merchFilter = (e) => {
         merchCards('merchContainer', findMerch);
     };
 };
+
 // MERCH FILTER BTN - SALE
 const saleFilter = () => {
         const findMerch = [];
@@ -180,6 +181,11 @@ const saleFilter = () => {
         };
         merchCards('merchContainer', findMerch);
 };
+
+// MERCH PAGE - BUY NOW BTN ON CARDS FUNC
+const buyNowAlert = (i) => {
+    window.alert(`Congratulations! You have purchased ${merch[i].title}. We now have all your credit card information. Our system is super safe. Don't even sweat it, dawg.`)
+}
 
 // CONCERT SECT ON HOMEPAGE
 const buildConcertSection = () => {
