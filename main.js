@@ -190,7 +190,7 @@ const buildMerchSection = (merchArray) => {
 const listGroupBuilder = (arr) => {
     let domString = '';
     for (let i = 0; i < arr.length; i++){
-    domString += `<a onClick="buyTicketAlert(${i})" class="list-group-item list-group-item-action">${arr[i].City}  <p class="list-inline-item text-center">When: ${arr[i].Date}</p></a>`;
+    domString += `<a onClick="buyTicketAlert(${i})" class="list-group-item list-group-item-action text-left"><p class="list-inline-item">${arr[i].City}</p><p class="list-inline-item">When: ${arr[i].Date}</p></a>`;
     }
     printToDom('list-group', domString);
 };
