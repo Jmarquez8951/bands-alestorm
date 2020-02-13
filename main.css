@@ -31,3 +31,19 @@
     text-align: center;
     
 }
+
+.about-body-container {
+    background-color: #b5dde0;
+}
+
+.about-body-container h1 {
+    background-color: #b5dde0;
+}
+
+.about-body1, .about-body2, .about-body3 {
+    padding: 1em;
+}
+
+.about-body1, .about-body2, .about-body3 img {
+    width: 100%;
+}
