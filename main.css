@@ -7,6 +7,29 @@
 .concert-image img {
     width: 100%;
     margin-bottom: 3%;
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle-box {
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.concert-image:hover img {
+    opacity: 0.3;
+
+}
+
+.concert-image:hover .middle-box {
+    opacity: 1;
 }
 
 .img-header img {
@@ -32,6 +55,10 @@
     
 }
 
+.about-page: {
+    font-family: 'Playfair Display', serif;
+}
+
 .about-body-container {
     background-color: #b5dde0;
 }
@@ -42,6 +69,7 @@
 
 .about-body1, .about-body2, .about-body3 {
     padding: 1em;
+    text-align: left;
 }
 
 .about-body1, .about-body2, .about-body3 img {
