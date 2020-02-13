@@ -155,6 +155,32 @@ const merchCards = (divId, arr) => {
    printToDom(divId, domString);
 };
 
+// MERCH FILTER BTNS - Clothing, CDs, All
+const merchFilter = (e) => {
+    const buttonId = e.target.id;
+    const findMerch = [];
+    if (buttonId === 'all') {
+        merchCards('merchContainer', merch);
+    } else {
+        for (let i = 0; i < merch.length; i++) {
+            if (merch[i].type === buttonId) {
+                findMerch.push(merch[i]);
+            };
+        };
+        merchCards('merchContainer', findMerch);
+    };
+};
+// MERCH FILTER BTN - SALE
+const saleFilter = () => {
+        const findMerch = [];
+        for (let i = 0; i < merch.length; i++) {
+            if (merch[i].onSale === true) {
+                findMerch.push(merch[i]);
+            };
+        };
+        merchCards('merchContainer', findMerch);
+};
+
 // CONCERT SECT ON HOMEPAGE
 const buildConcertSection = () => {
    let domString = '';
@@ -238,23 +264,38 @@ const addCity = () => {
 
 // EVENTS FUNCTION
 const events = () => {
-   document.getElementById('city-submit').addEventListener('click', addCity);
+    // events to run on concert page
+    if (window.location.pathname == '/concerts.html') {
+    document.getElementById('city-submit').addEventListener('click', addCity);
+    }
+
+    //events to run on merch page
+    if (window.location.pathname=='/merch.html') {
+    document.getElementById('clothing').addEventListener('click', merchFilter);
+    document.getElementById('cd').addEventListener('click', merchFilter);
+    document.getElementById('all').addEventListener('click', merchFilter);
+    document.getElementById('onSale').addEventListener('click', saleFilter);
+    }
 }
 
 // INIT FUNCTION - THESE RUN ON PAGE LOAD
 const init = () => {
+    // functions to run on merch page
    if (window.location.pathname=='/merch.html') {
       merchCards('merchContainer', merch);
+      events();
    }
-   
+   // functions to run on concerts page
    if (window.location.pathname == '/concerts.html'){
       listGroupBuilder(Cities);
       events();
    }
+   // functions to run on index
    if (window.location.pathname == '/index.html'){
       buildConcertSection();
       buildMerchSection(merch);
    }
+
 };
 
 init();
