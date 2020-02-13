@@ -157,6 +157,36 @@ const merchCards = (divId, arr) => {
     printToDom(divId, domString);
 };
 
+// MERCH FILTER BTNS
+
+// make function - make two functions? one for clothing/cd and one for onsale?
+// add event listeners
+const merchFilter = (e) => {
+    const buttonId = e.target.id;
+    if (buttonId === 'all') {
+        merchCards('merchContainer', merch);
+    } else {
+        const findMerch = [];
+        for (let i = 0; i < merch.length; i++) {
+            if (merch[i].type === buttonId) {
+                findMerch.push(merch[i]);
+            };
+        };
+        merchCards('merchContainer', merch);
+    };
+};
+
+const saleFilter = (e) => {
+    const buttonId = e.target.id;
+        const findMerch = [];
+        for (let i = 0; i < merch.length; i++) {
+            if (merch[i].onSale === true) {
+                findMerch.push(merch[i]);
+            };
+        };
+        merchCards('merchContainer', merch);
+};
+
 // CONCERT SECT ON HOMEPAGE
 const buildConcertSection = () => {
     let domString = '';
@@ -226,20 +256,35 @@ const addCity = () => {
 
 // EVENTS FUNCTION
 const events = () => {
+    // events to run on concert page
+    if (window.location.pathname == '/concerts.html') {
     document.getElementById('city-submit').addEventListener('click', addCity);
+    }
+
+    //events to run on merch page
+    if (window.location.pathname=='/merch.html') {
+    document.getElementById('clothing').addEventListener('click', merchFilter);
+    document.getElementById('cd').addEventListener('click', merchFilter);
+    document.getElementById('all').addEventListener('click', merchFilter);
+    document.getElementById('onSale').addEventListener('click', saleFilter);
+    }
 }
 
 // INIT FUNCTION - THESE RUN ON PAGE LOAD
 const init = () => {
+    // functions to run on merch page
     if (window.location.pathname=='/merch.html') {
         merchCards('merchContainer', merch);
+        events();
     }
     
+    // functions to run on concert page
     if (window.location.pathname == '/concerts.html'){
         listGroupBuilder(Cities);
         events();
     }
 
+    // functions to run on index
     if (window.location.pathname == '/index.html'){
         buildConcertSection();
     }
