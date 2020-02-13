@@ -168,9 +168,7 @@ const merchFilter = (e) => {
             };
         };
         merchCards('merchContainer', findMerch);
-        
     };
-    console.log(e.button.id);
 };
 // MERCH FILTER BTN - SALE
 const saleFilter = () => {
