@@ -155,10 +155,7 @@ const merchCards = (divId, arr) => {
    printToDom(divId, domString);
 };
 
-// MERCH FILTER BTNS
-
-// make function - make two functions? one for clothing/cd and one for onsale?
-// add event listeners
+// MERCH FILTER BTNS - Clothing, CDs, All
 const merchFilter = (e) => {
     const buttonId = e.target.id;
     const findMerch = [];
@@ -175,7 +172,7 @@ const merchFilter = (e) => {
     };
     console.log(e.button.id);
 };
-
+// MERCH FILTER BTN - SALE
 const saleFilter = () => {
         const findMerch = [];
         for (let i = 0; i < merch.length; i++) {
