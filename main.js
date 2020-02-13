@@ -178,7 +178,7 @@ const buildConcertSection = () => {
 const listGroupBuilder = (arr) => {
     let domString = '';
     for (let i = 0; i < arr.length; i++){
-    domString += `<a onClick="buyTicketAlert(${i})" class="list-group-item list-group-item-action">${arr[i].City}  <p>When: ${arr[i].Date}</p></a>`;
+    domString += `<a onClick="buyTicketAlert(${i})" class="list-group-item list-group-item-action">${arr[i].City}  <p class="list-inline-item text-center">When: ${arr[i].Date}</p></a>`;
     }
     printToDom('list-group', domString);
 };
