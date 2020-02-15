@@ -340,10 +340,6 @@ const init = () => {
       events();
       
    }
-   buildConcertSection();
-   buildMerchSection(merch);
-   printEmailForm()
-   events();
 
 };
 
