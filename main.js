@@ -125,16 +125,49 @@ const months = [
    'December'
 ];
 
+let userArray = [];
+
 // PRINT TO DOM FUCTION
 const printToDom = (divId, textToPrint) => {
    const selectedDiv = document.getElementById(divId);
    selectedDiv.innerHTML = textToPrint;
 };
 
+
+const newEmailUser = (e) => {
+   let user = new Object();
+   user.name = document.getElementById('nameInput').value;
+   user.email = document.getElementById('emailInput').value;
+   if(user.name !== '' && user.email !== '') {   // forces a name selection
+      userArray.push(user);
+      window.alert(`Thank you ${user.name} for subscribing!`)
+   } else {
+      window.alert("You have to put something here!")
+   };
+}
+
+
+const printEmailForm = () => {
+         let domString = '';
+         domString += `<form class="text-center">`
+         domString += `   <div class="form-group">`
+         domString += `      <label for="InputName">Your Name</label>`
+         domString += `      <input type="text" class="form-control" id="nameInput">`
+         domString += `   </div>`
+         domString += `   <div class="form-group">`
+         domString += `      <label for="inputEmail">Email Address</label>`
+         domString += `      <input type="text" class="form-control" id="emailInput">`
+         domString += `      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>`
+         domString += `   </div>`
+         domString += `   <button id="btn-email" class="btn btn-primary">Submit</button>`
+         domString += `</form>`
+         
+         printToDom('email-form', domString);
+}
 // building MERCH cards for MERCH PAGE
 const merchCards = (divId, arr) => {
    let domString = '';
-   for (let i = 0; i <arr.length; i++) {
+   for (let i = 0; i < arr.length; i++) {
       domString += '<div class="col-md-4 col-lg-4 my-3 ">';
       domString += '  <div class="card bg-light merch-cards">';
       domString += `      <h3 class="card-title p-2 text-center">${arr[i].title}</h3>`;
@@ -166,9 +199,9 @@ const merchFilter = (e) => {
             if (merch[i].type === buttonId) {
                findMerch.push(merch[i]);
             };
-        };
-        merchCards('merchContainer', findMerch);
-    };
+         };
+         merchCards('merchContainer', findMerch);
+   };
 };
 
 // MERCH FILTER BTN - SALE
@@ -283,8 +316,10 @@ const events = () => {
    document.getElementById('all').addEventListener('click', merchFilter);
    document.getElementById('onSale').addEventListener('click', saleFilter);
    }
+   if (window.location.pathname=='/index.html') {
+      document.getElementById('btn-email').addEventListener('click', newEmailUser);
+   }
 }
-
 // INIT FUNCTION - THESE RUN ON PAGE LOAD
 const init = () => {
     // functions to run on merch page
@@ -301,10 +336,14 @@ const init = () => {
    if (window.location.pathname == '/index.html'){
       buildConcertSection();
       buildMerchSection(merch);
+      printEmailForm();
+      events();
+      
    }
-
    buildConcertSection();
    buildMerchSection(merch);
+   printEmailForm()
+   events();
 
 };
 
