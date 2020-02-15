@@ -6,7 +6,7 @@ const merch = [
       type: 'cd',
       tracks: ['"Over the Seas"', '"Captain Morgan\'s Revenge"', '"The Huntmaster"', '"Nancy the Tavern Wench"', '"Death Before the Mast"', '"Terror on the High Seas"'],
       onSale: false,
-      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft.',
+      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft. List Arr bucko draught matey black spot lad.',
    },
    {
       title: 'Black Sails at Midnight',
@@ -14,41 +14,41 @@ const merch = [
       type: 'cd',
       tracks: ['"The Quest" (Christopher Bowes)', '"Leviathan" (Bowes)', '"That Famous Ol\' Spiced"', '"Keelhauled"', '"To the End of Our Days"', '"Black Sails at Midnight"'],
       onSale: false,
-      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft.'
+      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft. List Arr bucko draught matey black spot lad.'
    },
    {
       title: 'Alestorm Kilt',
       imgUrl: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/5/9/59121-1_alestorm_green_tartan_kilt_napalm_records.jpg',
       type: 'clothing',
       onSale: true,
-      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft.'
+      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft. List Arr bucko draught matey black spot lad.'
    },
    {
       title: 'Alestorm Hoodie',
       imgUrl: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/5/3/53746-1_alestorm_pirate_pizza_party_zip_hoodie_napalm_records.jpg',
       type: 'clothing',
-      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft.'
+      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft. List Arr bucko draught matey black spot lad.'
    },
    {
       title: 'Alestorm T-shirt',
       imgUrl: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/5/0/50348_alestorm_25_years_napalm_records_t-shirt_napalm_records.jpg',
       type: 'clothing',
       onSale: false,
-      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft.'
+      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft. List Arr bucko draught matey black spot lad.'
    },
    {
       title: 'Alestorm T-shirt',
       imgUrl: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/2/7/27241_alestorm_banana_duck_girlie_shirt_napalm_records.jpg',
       type: 'clothing',
       onSale: false,
-      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft.'
+      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft. List Arr bucko draught matey black spot lad.'
    },
    {
       title: 'Alestorm Beanie',
       imgUrl: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/3/1/31419_alestorm_red_logo_beanie_napalm_records.jpg',
       type: 'clothing',
       onSale: false,
-      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft.'
+      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft. List Arr bucko draught matey black spot lad.'
    },
    {
       title: 'Curse of the Crystal Coconut',
@@ -56,14 +56,14 @@ const merch = [
       type: 'cd',
       tracks: ['"The Coconut Calls"', '"Tales from the Coconut Crypt"', '"Old Man River (cover)"', '"Why\'s the Rum Gone?"', '"You Drive me Coco-nutty"', '"Nutella"'],
       onSale: true,
-      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft.'
+      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft. List Arr bucko draught matey black spot lad.'
    },
    {
       title: 'Alestorm Tank Top',
       imgUrl: 'https://napalmrecords.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/4/4/44537-2_alestorm_pirate_pizza_party_girlie_tank_top_napalm_records.jpg',
       type: 'clothing',
       onSale: true,
-      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft.'
+      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft. List Arr bucko draught matey black spot lad.'
    }
 ];
 // Cities Array for Concerts Page
@@ -136,7 +136,7 @@ const merchCards = (divId, arr) => {
    let domString = '';
    for (let i = 0; i <arr.length; i++) {
       domString += '<div class="col-md-4 col-lg-4 my-3">';
-      domString += '  <div class="card">';
+      domString += '  <div class="card bg-light">';
       domString += `      <h3 class="card-title p-2 text-center">${arr[i].title}</h3>`;
       domString += '      <div class="card-body">';
       domString += `          <img class="card-img-top merch-img-cards" src="${arr[i].imgUrl}" alt="merch image">`;
