@@ -224,7 +224,7 @@ const buyNowAlert = (i) => {
 // CONCERT SECT ON HOMEPAGE
 const buildConcertSection = () => {
    let domString = '';
-   domString += `<h1 class="text-center">Live Shows!</h1>`
+   domString += `<h1 class="text-center" style:"margin: 3%;">Live Shows!</h1>`
    domString += `<div class="d-flex flex-">`
    domString += `<div class="concert-text col-6">`
    domString +=    `<h4>Flogging lugger deadlights trysail cog. Pink lee brig Barbary Coast draft. Grog blossom capstan mizzenmast yard fathom. Jolly Roger marooned sutler flogging lateen sail. Lee come about hardtack dead men tell no tales Admiral of the Black. Skysail galleon Chain Shot keelhaul bounty. Aft hulk gunwalls hands fire in the hole. Blow the man down landlubber or just lubber boatswain hail-shot league. To go on account crow's nest cutlass doubloon Blimey. Privateer pinnace lateen sail Chain Shot code of conduct.</h4>`
