@@ -220,16 +220,16 @@ const buildMerchSection = (merchArray) => {
 
 // list group for CONCERTS
 const listGroupBuilder = (arr) => {
-   let domString = '';
-   for (let i = 0; i < arr.length; i++){
-   domString += `<a onClick="buyTicketAlert(${i})" class="list-group-item list-group-item-action">${arr[i].City}  <p>When: ${arr[i].Date}</p></a>`;
-   }
-   printToDom('list-group', domString);
+    let domString = '';
+    for (let i = 0; i < arr.length; i++){
+        domString += `<a onClick="buyTicketAlert(${i})" class="row border rounded mb-1 list-group-item-action bg-light"><p class="col">${arr[i].City}</p><p class="col text-center">When: ${arr[i].Date}</p><p class="col text-right">Buy Now</p></a>`;
+    }
+    printToDom('list-group', domString);
 };
 
 // function for buying tickets
 const buyTicketAlert = (i) => {
-   window.alert(`You just bought tickets to our show in ${Cities[i].City}. Thank you for your purchase.`)
+   window.alert(`You just bought tickets to our show in ${Cities[i].City}. Thank you for your purchase.`);
 };
 
 // ADD CITY IN FORM ON CONCERTS PAGE
