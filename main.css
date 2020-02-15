@@ -94,3 +94,19 @@ div a p {
 .nav-link {
     font-size: 120%;
 }
+
+/* Contact Page */
+
+.logo {
+    width: 30px;
+}
+
+.logo-container {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.image-hover:hover {
+    background-color: aqua;
+    opacity: 50%;
+}
