@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Alestorm: Concerts</title>
 </head>
-<body>
+<body class="body-container">
 <!-- BEGIN NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-bar" style="background-color: #41c9c9;">
         <a class="navbar-brand" href="index.html">Alestorm</a>
@@ -32,18 +32,18 @@
         </div>
         </nav>
      <!-- END NAVBAR -->
-     
+        <h1 class="text-center m-3 text-dark">Come see us play!</h1>
         <div id="list-group" class="w-75 p-3 mx-auto container"></div>
 
-
-        <form>
-            <div class="col-4">
-                <p>Tell us where you want to see us play.</p>
-                <input id="concert-input" type="text" class="form-control" placeholder="Enter a city">
-                <button id="city-submit" type="button" class="btn btn-info">Submit</button>
-            </div>
-        </form>
-
+        <div class="container">
+            <form>
+                <div class="col-4 alert alert-secondary text-center mx-auto">
+                    <p>Tell us where you want to see us play.</p>
+                    <input id="concert-input" type="text" class="form-control" placeholder="Enter a city">
+                    <button id="city-submit" type="button" class="btn btn-info m-1">Submit</button>
+                </div>
+            </form>
+        </div>
         <footer class="footer">
             <div class="container text-center">
             <h3>2020 Alestorm &copy;</h3>
