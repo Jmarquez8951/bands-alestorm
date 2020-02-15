@@ -23,30 +23,11 @@
     text-align: center;
 }
 
-.middle-merch-box {
-    width: 100%;
-    transition: .5s ease;
-    top:50%;
-    left: 50%;
-    position: absolute;
-    opacity: 0;
-    text-align: center;
-    transform: translate(-50%, -50%);
-}
-
 .concert-image:hover img {
     opacity: 0.3;
 }
 
 .concert-image:hover .middle-box {
-    opacity: 1;
-}
-
-.merch-main:hover img {
-    opacity: 0.3;
-}
-
-.merch-main:hover .hover-image {
     opacity: 1;
 }
 
@@ -94,5 +75,12 @@
 }
 
 .about-body1, .about-body2, .about-body3 img {
-    width: 100%;
+    width: 100%;    
+}
+
+/* Concerts Page*/
+
+div a p {
+    margin-left: 50px;
+
 }

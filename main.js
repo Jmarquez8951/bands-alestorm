@@ -140,7 +140,7 @@ const merchCards = (divId, arr) => {
       domString += `      <h3 class="card-title p-2 text-center">${arr[i].title}</h3>`;
       domString += '      <div class="card-body">';
       domString += `          <img class="card-img-top merch-img-cards" src="${arr[i].imgUrl}" alt="merch image">`;
-       if (arr[i].type === 'cd') {
+         if (arr[i].type === 'cd') {
             domString += `<p class="card-text p-2">Track List: 1. ${arr[i].tracks[0]}, 2. ${arr[i].tracks[1]}, 3. ${arr[i].tracks[2]}, 4. ${arr[i].tracks[3]}, 5. ${arr[i].tracks[4]}, 6. ${arr[i].tracks[5]} </p>`;
             } else {
             domString += `          <p class="card-text p-2">${arr[i].description}</p>`;
@@ -173,18 +173,18 @@ const merchFilter = (e) => {
 
 // MERCH FILTER BTN - SALE
 const saleFilter = () => {
-        const findMerch = [];
-        for (let i = 0; i < merch.length; i++) {
+      const findMerch = [];
+      for (let i = 0; i < merch.length; i++) {
             if (merch[i].onSale === true) {
-                findMerch.push(merch[i]);
+               findMerch.push(merch[i]);
             };
-        };
-        merchCards('merchContainer', findMerch);
+      };
+      merchCards('merchContainer', findMerch);
 };
 
 // MERCH PAGE - BUY NOW BTN ON CARDS FUNC
 const buyNowAlert = (i) => {
-    window.alert(`Congratulations! You have purchased ${merch[i].title}. We now have all your credit card information. Our system is super safe. Don't even sweat it, dawg.`)
+   window.alert(`Congratulations! You have purchased ${merch[i].title}. We now have all your credit card information. Our system is super safe. Don't even sweat it, dawg.`)
 }
 
 // CONCERT SECT ON HOMEPAGE
@@ -225,14 +225,14 @@ const buildMerchSection = (merchArray) => {
 const listGroupBuilder = (arr) => {
    let domString = '';
    for (let i = 0; i < arr.length; i++){
-   domString += `<a onClick="buyTicketAlert(${i})" class="list-group-item list-group-item-action">${arr[i].City}  <p>When: ${arr[i].Date}</p></a>`;
+      domString += `<a onClick="buyTicketAlert(${i})" class="row border rounded mb-1 list-group-item-action bg-light"><p class="col">${arr[i].City}</p><p class="col text-center">When: ${arr[i].Date}</p><p class="col text-right">Buy Now</p></a>`;
    }
    printToDom('list-group', domString);
 };
 
 // function for buying tickets
 const buyTicketAlert = (i) => {
-   window.alert(`You just bought tickets to our show in ${Cities[i].City}. Thank you for your purchase.`)
+   window.alert(`You just bought tickets to our show in ${Cities[i].City}. Thank you for your purchase.`);
 };
 
 // ADD CITY IN FORM ON CONCERTS PAGE
