@@ -2,6 +2,9 @@
 .merch-img-cards {
     width: 90%;
 }
+.merch-cards {
+    height: 100%;
+}
 
 /* INDEX */
 .concert-image img {
