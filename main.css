@@ -82,13 +82,9 @@
     background-color: #b5dde0;
 }
 
-.about-body1, .about-body2, .about-body3 {
-    padding: 1em;
-    text-align: left;
-}
-
-.about-body1, .about-body2, .about-body3 img {
-    width: 100%;    
+.about-body1 .about-body2 .about-body3 img {
+    width: 1rem;
+    height: 1rem;    
 }
 
 /* Concerts Page*/
