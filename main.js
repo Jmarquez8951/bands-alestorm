@@ -135,6 +135,7 @@ const printToDom = (divId, textToPrint) => {
 
 
 const newEmailUser = (e) => {
+   e.preventDefault();
    let user = new Object();
    user.name = document.getElementById('nameInput').value;
    user.email = document.getElementById('emailInput').value;
@@ -338,7 +339,6 @@ const init = () => {
       buildMerchSection(merch);
       printEmailForm();
       events();
-      
    }
 
 };
