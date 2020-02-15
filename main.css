@@ -37,6 +37,7 @@
 
 .body-container {
     background-color: #b5dde0;
+
 }
 
 #merch {
@@ -57,9 +58,6 @@
 }
 
 /* ABOUT */
-.about-page {
-    font-family: 'Playfair Display', serif;
-}
 
 .about-body-container {
     background-color: #b5dde0;
@@ -83,4 +81,9 @@
 div a p {
     margin-left: 50px;
 
+}
+
+/* FONT */
+.body-container {
+    font-family: 'Oswald', sans-serif;
 }
