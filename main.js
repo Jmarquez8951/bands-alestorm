@@ -157,14 +157,14 @@ const merchCards = (divId, arr) => {
 
 // MERCH FILTER BTNS - Clothing, CDs, All
 const merchFilter = (e) => {
-    const buttonId = e.target.id;
-    const findMerch = [];
-    if (buttonId === 'all') {
-        merchCards('merchContainer', merch);
-    } else {
-        for (let i = 0; i < merch.length; i++) {
+   const buttonId = e.target.id;
+   const findMerch = [];
+   if (buttonId === 'all') {
+      merchCards('merchContainer', merch);
+   } else {
+      for (let i = 0; i < merch.length; i++) {
             if (merch[i].type === buttonId) {
-                findMerch.push(merch[i]);
+               findMerch.push(merch[i]);
             };
         };
         merchCards('merchContainer', findMerch);
