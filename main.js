@@ -141,10 +141,10 @@ const merchCards = (divId, arr) => {
       domString += '      <div class="card-body">';
       domString += `          <img class="card-img-top merch-img-cards" src="${arr[i].imgUrl}" alt="merch image">`;
        if (arr[i].type === 'cd') {
-         domString += `<p class="card-text p-2">Track List: 1. ${arr[i].tracks[0]}, 2. ${arr[i].tracks[1]}, 3. ${arr[i].tracks[2]}, 4. ${arr[i].tracks[3]}, 5. ${arr[i].tracks[4]}, 6. ${arr[i].tracks[5]} </p>`;
-         } else {
-         domString += `          <p class="card-text p-2">${arr[i].description}</p>`;
-         }
+            domString += `<p class="card-text p-2">Track List: 1. ${arr[i].tracks[0]}, 2. ${arr[i].tracks[1]}, 3. ${arr[i].tracks[2]}, 4. ${arr[i].tracks[3]}, 5. ${arr[i].tracks[4]}, 6. ${arr[i].tracks[5]} </p>`;
+            } else {
+            domString += `          <p class="card-text p-2">${arr[i].description}</p>`;
+            }
       domString += '          <div class="text-center">';
       domString += `         <a onClick="buyNowAlert(${i})" class="btn btn-primary">Buy Now</a>`;
       domString += '          </div>';
@@ -195,12 +195,12 @@ const buildConcertSection = () => {
    domString += `<div class="concert-text col-6">`
    domString +=    `<h4>Flogging lugger deadlights trysail cog. Pink lee brig Barbary Coast draft. Grog blossom capstan mizzenmast yard fathom. Jolly Roger marooned sutler flogging lateen sail. Lee come about hardtack dead men tell no tales Admiral of the Black. Skysail galleon Chain Shot keelhaul bounty. Aft hulk gunwalls hands fire in the hole. Blow the man down landlubber or just lubber boatswain hail-shot league. To go on account crow's nest cutlass doubloon Blimey. Privateer pinnace lateen sail Chain Shot code of conduct.</h4>`
    domString += `</div>`
+   domString += `<div class="concert-image col-6">` 
    domString += `<a href="./concerts.html">`
-   domString += `<div class="concert-image col-6">`
    domString +=    `<img src="https://live.staticflickr.com/65535/48480398492_97807f80bf_c.jpg" alt="High kicks in Dusseldorf"/>`
-   domString +=    `<div class="middle-box"><div class="text">Buy Tickets</div></div>`
-   domString += `</div>`
+   domString +=    `<div class="middle-box"><div class="text">Buy Tickets!</div></div>`
    domString += `</a>`
+   domString += `</div>`
    domString += `</div>`
    printToDom('concert', domString);
 };
@@ -209,9 +209,11 @@ const buildMerchSection = (merchArray) => {
    let domString = '';
    merchArray.forEach(merch => {
       if (merch.onSale) {
-         domString += `<div class="merch-main" >`
+         domString += `<div class="merch-main">`
          domString +=   `<a href="./merch.html">`
+         domString +=   `<img src="https://i.ibb.co/WVdqKZw/Screen-Shot-2020-02-15-at-09-36-40.png" class="hover-image" alt="buy now"`
          domString +=    `<img src=${merch.imgUrl} alt=${merch.title}/>`
+         domString +=    `<div class="middle-merch-box"><div class="text">Buy Merch!</div></div>`
          domString +=   `</a>`
          domString += `</div>`
       }
@@ -272,17 +274,16 @@ const addCity = () => {
 // EVENTS FUNCTION
 const events = () => {
     // events to run on concert page
-    if (window.location.pathname == '/concerts.html') {
-    document.getElementById('city-submit').addEventListener('click', addCity);
-    }
-
-    //events to run on merch page
-    if (window.location.pathname=='/merch.html') {
-    document.getElementById('clothing').addEventListener('click', merchFilter);
-    document.getElementById('cd').addEventListener('click', merchFilter);
-    document.getElementById('all').addEventListener('click', merchFilter);
-    document.getElementById('onSale').addEventListener('click', saleFilter);
-    }
+   if (window.location.pathname == '/concerts.html') {
+   document.getElementById('city-submit').addEventListener('click', addCity);
+   }
+   //events to run on merch page
+   if (window.location.pathname=='/merch.html') {
+   document.getElementById('clothing').addEventListener('click', merchFilter);
+   document.getElementById('cd').addEventListener('click', merchFilter);
+   document.getElementById('all').addEventListener('click', merchFilter);
+   document.getElementById('onSale').addEventListener('click', saleFilter);
+   }
 }
 
 // INIT FUNCTION - THESE RUN ON PAGE LOAD
@@ -302,6 +303,9 @@ const init = () => {
       buildConcertSection();
       buildMerchSection(merch);
    }
+
+   buildConcertSection();
+   buildMerchSection(merch);
 
 };
 
