@@ -14,7 +14,7 @@ const merch = [
       type: 'cd',
       tracks: ['"The Quest" (Christopher Bowes)', '"Leviathan" (Bowes)', '"That Famous Ol\' Spiced"', '"Keelhauled"', '"To the End of Our Days"', '"Black Sails at Midnight"'],
       onSale: false,
-      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft. List Arr bucko draught matey black spot lad.'
+      description: 'Jack Ketch sutler dance the hempen jig parrel hardtack aye. Pink boatswain mizzen log heave down draft. List Arr bucko draught matey black spot lad. List Arr bucko draught matey black spot lad.'
    },
    {
       title: 'Alestorm Kilt',
@@ -135,8 +135,8 @@ const printToDom = (divId, textToPrint) => {
 const merchCards = (divId, arr) => {
    let domString = '';
    for (let i = 0; i <arr.length; i++) {
-      domString += '<div class="col-md-4 col-lg-4 my-3">';
-      domString += '  <div class="card bg-light">';
+      domString += '<div class="col-md-4 col-lg-4 my-3 ">';
+      domString += '  <div class="card bg-light merch-cards">';
       domString += `      <h3 class="card-title p-2 text-center">${arr[i].title}</h3>`;
       domString += '      <div class="card-body">';
       domString += `          <img class="card-img-top merch-img-cards" src="${arr[i].imgUrl}" alt="merch image">`;
