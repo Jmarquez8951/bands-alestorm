@@ -243,7 +243,7 @@ const buildMerchSection = (merchArray) => {
    let domString = '';
    merchArray.forEach(merch => {
       if (merch.onSale) {
-         domString += `<div class="card col-md-4 col-lg-4" style=''>`
+         domString += `<div class="card col-md-4 col-lg-4">`
          domString += `   <img src="${merch.imgUrl}" class="card-img-top" alt="${merch.title}">`
          domString += `   <div class="card-body text-center">`
          domString += `      <a href="./merch.html" class="btn btn-success">Buy Now!</a>`
