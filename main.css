@@ -87,3 +87,7 @@ div a p {
 .body-container {
     font-family: 'Oswald', sans-serif;
 }
+
+.nav-link {
+    font-size: 120%;
+}
