@@ -209,12 +209,11 @@ const buildMerchSection = (merchArray) => {
    let domString = '';
    merchArray.forEach(merch => {
       if (merch.onSale) {
-         domString += `<div class="merch-main">`
-         domString +=   `<a href="./merch.html">`
-         domString +=   `<img src="https://i.ibb.co/WVdqKZw/Screen-Shot-2020-02-15-at-09-36-40.png" class="hover-image" alt="buy now"`
-         domString +=    `<img src=${merch.imgUrl} alt=${merch.title}/>`
-         domString +=    `<div class="middle-merch-box"><div class="text">Buy Merch!</div></div>`
-         domString +=   `</a>`
+         domString += `<div class="card" style="width: 30%; margin: 2em;">`
+         domString += `   <img src="${merch.imgUrl}" class="card-img-top" alt="${merch.title}">`
+         domString += `   <div class="card-body text-center">`
+         domString += `      <a href="./merch.html" class="btn btn-success">Buy Now!</a>`
+         domString += `   </div>`
          domString += `</div>`
       }
    });
