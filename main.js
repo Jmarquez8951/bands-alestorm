@@ -140,11 +140,11 @@ const merchCards = (divId, arr) => {
       domString += `      <h3 class="card-title p-2 text-center">${arr[i].title}</h3>`;
       domString += '      <div class="card-body">';
       domString += `          <img class="card-img-top merch-img-cards" src="${arr[i].imgUrl}" alt="merch image">`;
-       if (arr[i].type === 'cd') {
-         domString += `<p class="card-text p-2">Track List: 1. ${arr[i].tracks[0]}, 2. ${arr[i].tracks[1]}, 3. ${arr[i].tracks[2]}, 4. ${arr[i].tracks[3]}, 5. ${arr[i].tracks[4]}, 6. ${arr[i].tracks[5]} </p>`;
-         } else {
-         domString += `          <p class="card-text p-2">${arr[i].description}</p>`;
-         }
+         if (arr[i].type === 'cd') {
+            domString += `<p class="card-text p-2">Track List: 1. ${arr[i].tracks[0]}, 2. ${arr[i].tracks[1]}, 3. ${arr[i].tracks[2]}, 4. ${arr[i].tracks[3]}, 5. ${arr[i].tracks[4]}, 6. ${arr[i].tracks[5]} </p>`;
+            } else {
+            domString += `          <p class="card-text p-2">${arr[i].description}</p>`;
+            }
       domString += '          <div class="text-center">';
       domString += `         <a onClick="buyNowAlert(${i})" class="btn btn-primary">Buy Now</a>`;
       domString += '          </div>';
@@ -157,14 +157,14 @@ const merchCards = (divId, arr) => {
 
 // MERCH FILTER BTNS - Clothing, CDs, All
 const merchFilter = (e) => {
-    const buttonId = e.target.id;
-    const findMerch = [];
-    if (buttonId === 'all') {
-        merchCards('merchContainer', merch);
-    } else {
-        for (let i = 0; i < merch.length; i++) {
+   const buttonId = e.target.id;
+   const findMerch = [];
+   if (buttonId === 'all') {
+      merchCards('merchContainer', merch);
+   } else {
+      for (let i = 0; i < merch.length; i++) {
             if (merch[i].type === buttonId) {
-                findMerch.push(merch[i]);
+               findMerch.push(merch[i]);
             };
         };
         merchCards('merchContainer', findMerch);
@@ -173,18 +173,18 @@ const merchFilter = (e) => {
 
 // MERCH FILTER BTN - SALE
 const saleFilter = () => {
-        const findMerch = [];
-        for (let i = 0; i < merch.length; i++) {
+      const findMerch = [];
+      for (let i = 0; i < merch.length; i++) {
             if (merch[i].onSale === true) {
-                findMerch.push(merch[i]);
+               findMerch.push(merch[i]);
             };
-        };
-        merchCards('merchContainer', findMerch);
+      };
+      merchCards('merchContainer', findMerch);
 };
 
 // MERCH PAGE - BUY NOW BTN ON CARDS FUNC
 const buyNowAlert = (i) => {
-    window.alert(`Congratulations! You have purchased ${merch[i].title}. We now have all your credit card information. Our system is super safe. Don't even sweat it, dawg.`)
+   window.alert(`Congratulations! You have purchased ${merch[i].title}. We now have all your credit card information. Our system is super safe. Don't even sweat it, dawg.`)
 }
 
 // CONCERT SECT ON HOMEPAGE
@@ -195,11 +195,12 @@ const buildConcertSection = () => {
    domString += `<div class="concert-text col-6">`
    domString +=    `<h4>Flogging lugger deadlights trysail cog. Pink lee brig Barbary Coast draft. Grog blossom capstan mizzenmast yard fathom. Jolly Roger marooned sutler flogging lateen sail. Lee come about hardtack dead men tell no tales Admiral of the Black. Skysail galleon Chain Shot keelhaul bounty. Aft hulk gunwalls hands fire in the hole. Blow the man down landlubber or just lubber boatswain hail-shot league. To go on account crow's nest cutlass doubloon Blimey. Privateer pinnace lateen sail Chain Shot code of conduct.</h4>`
    domString += `</div>`
-   domString += `<a href="./concert.html>"`
-   domString += `<div class="concert-image col-6">`
+   domString += `<div class="concert-image col-6">` 
+   domString += `<a href="./concerts.html">`
    domString +=    `<img src="https://live.staticflickr.com/65535/48480398492_97807f80bf_c.jpg" alt="High kicks in Dusseldorf"/>`
-   domString += `</div>`
+   domString +=    `<div class="middle-box"><div class="text">Buy Tickets!</div></div>`
    domString += `</a>`
+   domString += `</div>`
    domString += `</div>`
    printToDom('concert', domString);
 };
@@ -208,10 +209,11 @@ const buildMerchSection = (merchArray) => {
    let domString = '';
    merchArray.forEach(merch => {
       if (merch.onSale) {
-         domString += `<div class="merch-main" >`
-         domString +=   `<a href="./merch.html">`
-         domString +=    `<img src=${merch.imgUrl} alt=${merch.title}/>`
-         domString +=   `</a>`
+         domString += `<div class="card" style="width: 30%; margin: 2em;">`
+         domString += `   <img src="${merch.imgUrl}" class="card-img-top" alt="${merch.title}">`
+         domString += `   <div class="card-body text-center">`
+         domString += `      <a href="./merch.html" class="btn btn-success">Buy Now!</a>`
+         domString += `   </div>`
          domString += `</div>`
       }
    });
@@ -220,11 +222,11 @@ const buildMerchSection = (merchArray) => {
 
 // list group for CONCERTS
 const listGroupBuilder = (arr) => {
-    let domString = '';
-    for (let i = 0; i < arr.length; i++){
-        domString += `<a onClick="buyTicketAlert(${i})" class="row border rounded mb-1 list-group-item-action bg-light"><p class="col">${arr[i].City}</p><p class="col text-center">When: ${arr[i].Date}</p><p class="col text-right">Buy Now</p></a>`;
-    }
-    printToDom('list-group', domString);
+   let domString = '';
+   for (let i = 0; i < arr.length; i++){
+      domString += `<a onClick="buyTicketAlert(${i})" class="row border rounded mb-1 list-group-item-action bg-light"><p class="col">${arr[i].City}</p><p class="col text-center">When: ${arr[i].Date}</p><p class="col text-right">Buy Now</p></a>`;
+   }
+   printToDom('list-group', domString);
 };
 
 // function for buying tickets
@@ -271,17 +273,16 @@ const addCity = () => {
 // EVENTS FUNCTION
 const events = () => {
     // events to run on concert page
-    if (window.location.pathname == '/concerts.html') {
-    document.getElementById('city-submit').addEventListener('click', addCity);
-    }
-
-    //events to run on merch page
-    if (window.location.pathname=='/merch.html') {
-    document.getElementById('clothing').addEventListener('click', merchFilter);
-    document.getElementById('cd').addEventListener('click', merchFilter);
-    document.getElementById('all').addEventListener('click', merchFilter);
-    document.getElementById('onSale').addEventListener('click', saleFilter);
-    }
+   if (window.location.pathname == '/concerts.html') {
+   document.getElementById('city-submit').addEventListener('click', addCity);
+   }
+   //events to run on merch page
+   if (window.location.pathname=='/merch.html') {
+   document.getElementById('clothing').addEventListener('click', merchFilter);
+   document.getElementById('cd').addEventListener('click', merchFilter);
+   document.getElementById('all').addEventListener('click', merchFilter);
+   document.getElementById('onSale').addEventListener('click', saleFilter);
+   }
 }
 
 // INIT FUNCTION - THESE RUN ON PAGE LOAD
@@ -301,6 +302,9 @@ const init = () => {
       buildConcertSection();
       buildMerchSection(merch);
    }
+
+   buildConcertSection();
+   buildMerchSection(merch);
 
 };
 

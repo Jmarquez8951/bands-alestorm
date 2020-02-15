@@ -8,6 +8,28 @@
 .concert-image img {
     width: 100%;
     margin-bottom: 3%;
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle-box {
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.concert-image:hover img {
+    opacity: 0.3;
+}
+
+.concert-image:hover .middle-box {
+    opacity: 1;
 }
 
 .img-header img {
@@ -16,6 +38,7 @@
 
 .body-container {
     background-color: #b5dde0;
+
 }
 
 #merch {
@@ -26,15 +49,46 @@
     width: 100%;
     height: 100%;
     padding: 1em;
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
 }
 
 .merch-title {
     text-align: center;
-    
+}
+
+/* ABOUT */
+
+.about-body-container {
+    background-color: #b5dde0;
+}
+
+.about-body-container h1 {
+    background-color: #b5dde0;
+}
+
+.about-body1, .about-body2, .about-body3 {
+    padding: 1em;
+    text-align: left;
+}
+
+.about-body1, .about-body2, .about-body3 img {
+    width: 100%;    
 }
 
 /* Concerts Page*/
 
 div a p {
     margin-left: 50px;
+
+}
+
+/* FONT */
+.body-container {
+    font-family: 'Oswald', sans-serif;
+}
+
+.nav-link {
+    font-size: 120%;
 }
